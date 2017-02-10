@@ -1,0 +1,300 @@
+/**
+ Theme Name: Woody
+ Theme URI: http://lab.studio-montana.com/woody-theme/
+ Author: Studio Montana (Sebastien Chandonay / Cyril Tissot)
+ Author URI: http://www.studio-montana.com
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+ This theme, like WordPress, is licensed under the GPL.
+ Use it to make something cool, have fun, and share what you've learned with others.
+ */
+
+/**
+ * General
+ */
+body {
+	background-color: #fff;
+}
+
+body, button, input, select, textarea, p, h1, h2, h3, h4, h5, h6{
+	font-family: Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
+}
+
+.entry-content, .entry-summary, .page-content, .comment-content{
+	text-align: left;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_row{
+	max-width: 1248px !important;
+	width: 100% !important;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_with_background .et_pb_row{
+	width: 100% !important;
+}
+
+/*
+body.et_divi_builder #et_builder_outer_content .et_pb_row.et_pb_row_fullwidth,
+body.et_divi_builder #et_builder_outer_content .et_pb_specialty_fullwidth > .et_pb_row{
+	max-width: 100% !important;
+	width: 100% !important;
+}
+*/
+
+.et_divi_builder #et_builder_outer_content .et_pb_module a{
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_module a:hover,
+.et_divi_builder #et_builder_outer_content .et_pb_module a:focus,
+.et_divi_builder #et_builder_outer_content .et_pb_module a:active{
+}
+
+.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ul,
+.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ol,
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ul,
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ol{
+	margin-left: 15px;
+}
+
+.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ul li,
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ul li{
+	list-style: square;
+}
+
+.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ol li,
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ol li{
+	list-style: decimal;
+}
+
+.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ul ul,
+.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ol ol,
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ul ul,
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ol ol{
+	padding-bottom: 0;
+}
+
+/**
+ * COOKIES LEGISLATION
+ */
+.cookies-legislation-container{
+	font-size: 12px;
+	right: 12px;
+	bottom: 12px;
+	top: auto;
+	left: auto;
+	max-width: 275px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 18px 30px 24px 18px;
+	color: #fff;
+	font-weight: 500;
+	border: none;
+	
+}
+.cookies-legislation-container a{
+	color: #fff;
+}
+
+.cookies-legislation-container a:hover, .cookies-legislation-container a:focus, .cookies-legislation-container a:active{
+	color: #fff;
+}
+
+.cookies-legislation-container #cookies-accept-condition{
+	background: none;
+	border: none;
+	color: #fff;
+	bottom: 2px;
+	right: 2px;
+	cursor: pointer;
+	outline: none;
+}
+
+.cookies-legislation-container #cookies-accept-condition:hover, .cookies-legislation-container #cookies-accept-condition:focus, .cookies-legislation-container #cookies-accept-condition:active{
+	background: none;
+	border: none;
+	color: #fff;
+}
+
+.cookies-legislation-container #cookies-accept-condition i{
+	font-size: 18px;
+}
+
+/**
+ * Header
+ */
+#masthead{
+	
+}
+
+#masthead .site-header-container{
+	background: #00a6d8;
+}
+
+/**
+ * Branding
+ */
+.site-description{
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Navigation
+ */
+.site-navigation-container, .main-navigation{
+	
+}
+
+.main-navigation li{
+	
+}
+
+.main-navigation li a{
+	
+}
+
+.main-navigation li a:hover,
+.main-navigation li a:focus,
+.main-navigation li a:active,
+.main-navigation .current_page_item>a,
+.main-navigation .current-menu-item>a,
+.main-navigation .current_page_ancestor>a,
+.main-navigation .current_menu_ancestor>a{
+	
+}
+
+.main-navigation ul ul.sub-menu {
+	
+}
+
+.main-navigation ul ul.sub-menu>li {
+	
+}
+
+.main-navigation ul ul.sub-menu>li a {
+	
+}
+
+.main-navigation ul ul.sub-menu>li:last-child a {
+	
+}
+
+.main-navigation ul ul.sub-menu>li a:hover,
+.main-navigation ul ul.sub-menu>li a:focus,
+.main-navigation ul ul.sub-menu>li a:active,
+.main-navigation ul ul.sub-menu .current_page_item>a,
+.main-navigation ul ul.sub-menu .current-menu-item>a,
+.main-navigation ul ul.sub-menu .current_page_ancestor>a,
+.main-navigation ul ul.sub-menu .current_menu_ancestor>a{
+	
+}
+
+/**
+ * Sidebar
+ */
+.site-main #sidebar{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 48px 24px;
+	background: #D4D4D4;
+}
+
+/**
+ * Blog
+ */
+body.blog .site-main #primary{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 48px 24px;
+}
+
+/**
+ * 404
+ */
+body.error404 .site-main #primary{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 48px 24px;
+}
+
+/**
+ * Sitemap
+ */
+body.page-template-sitemap .site-main #primary{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 48px 24px;
+}
+
+/**
+ * Search result
+ */
+body.search .site-main #primary{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 48px 24px;
+}
+
+body.search .site-main #primary article{
+	margin: 12px 0;
+	padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+body.search .site-main #primary article .entry-title{
+	position: relative;
+	font-size: 24px;
+	margin: 0 0 12px 0;
+	padding: 0;
+	color: #fff;
+}
+
+body.search .site-main #primary article .entry-title a{
+	padding: 0 0 0 18px;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	-webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+body.search .site-main #primary article .entry-title a:before{
+	font-family: FontAwesome;
+	text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	content: "\f0c1";
+    position: absolute;
+    top: 6px;
+	left: 0;
+	font-size: 12px;
+}
+
+body.search .site-main #primary article .entry-thumbnail{
+	display: none;
+}
+
+body.search .site-main #primary article.content-none{
+	border-bottom: none;
+}
+
+/**
+ * Footer
+ */
+.site-footer .site-footer-container{
+	
+}
+
+.site-footer .site-footer-container{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 48px 24px;
+	background: #F4F4F4;
+}
