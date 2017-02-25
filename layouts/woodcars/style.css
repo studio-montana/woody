@@ -1042,28 +1042,112 @@ body.et_divi_builder #et_builder_outer_content .et_pb_specialty_fullwidth > .et_
 .et_divi_builder #et_builder_outer_content .et_pb_module a:active{
 }
 
-.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ul,
-.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ol,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb .text ul,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb .text ol,
 .et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ul,
 .et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ol{
 	margin-left: 15px;
 }
 
-.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ul li,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb .text ul li,
 .et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ul li{
 	list-style: square;
 }
 
-.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ol li,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb .text ol li,
 .et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ol li{
 	list-style: decimal;
 }
 
-.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ul ul,
-.et_divi_builder #et_builder_outer_content .dimarino_et_pb .text ol ol,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb .text ul ul,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb .text ol ol,
 .et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ul ul,
 .et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_text ol ol{
 	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.et_divi_builder #et_builder_outer_content .et_pb_row h1,
+.et_divi_builder #et_builder_outer_content .et_pb_row h2,
+.et_divi_builder #et_builder_outer_content .et_pb_row h3,
+.et_divi_builder #et_builder_outer_content .et_pb_row h4,
+.et_divi_builder #et_builder_outer_content .et_pb_row h5,
+.et_divi_builder #et_builder_outer_content .et_pb_row h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+h1,
+.et_divi_builder #et_builder_outer_content .et_pb_row h1{
+	font-size: 42px;
+}
+
+h2,
+.et_divi_builder #et_builder_outer_content .et_pb_row h2{
+	font-size: 32px;
+}
+
+h3,
+.et_divi_builder #et_builder_outer_content .et_pb_row h3{
+	font-size: 28px;
+}
+
+h4,
+.et_divi_builder #et_builder_outer_content .et_pb_row h4{
+	font-size: 24px;
+}
+
+h5,
+.et_divi_builder #et_builder_outer_content .et_pb_row h5{
+	font-size: 20px;
+}
+
+h6,
+.et_divi_builder #et_builder_outer_content .et_pb_row h6{
+	font-size: 16px;
+}
+
+.entry-content, .entry-summary, .page-content, .comment-content{
+	text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+	
+	h1,
+	.et_divi_builder #et_builder_outer_content .et_pb_row h1{
+		font-size: 32px;
+	}
+	
+	h2,
+	.et_divi_builder #et_builder_outer_content .et_pb_row h2{
+		font-size: 26px;
+	}
+	
+	h3,
+	.et_divi_builder #et_builder_outer_content .et_pb_row h3{
+		font-size: 22px;
+	}
+	
+	h4,
+	.et_divi_builder #et_builder_outer_content .et_pb_row h4{
+		font-size: 18px;
+	}
+	
+	h5,
+	.et_divi_builder #et_builder_outer_content .et_pb_row h5{
+		font-size: 16px;
+	}
+	
+	h6,
+	.et_divi_builder #et_builder_outer_content .et_pb_row h6{
+		font-size: 14px;
+	}
 }
 
 /**
@@ -1286,4 +1370,441 @@ body.search .site-main #primary article.content-none{
 	margin: 0 auto;
 	padding: 48px 24px;
 	background: #F4F4F4;
+}
+
+/**
+ * Divi modules - Header Fullwidth
+ */
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header{
+	position: relative;
+	background: #fff;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay{
+	padding-top: 32px; /* #masthead height */
+	position: relative;
+	/* flex */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.fullscreen .overlay{
+	border-top: 20px solid #fff;
+	border-bottom: 20px solid #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.no-fullscreen .overlay {
+	min-height: 600px;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay .content{
+	max-width: 1048px;
+	margin: 0 auto;
+	padding: 140px 24px;
+	color: #fff;
+	/* flex */
+    -webkit-align-self: center;
+    -moz-align-self: center;
+    -ms-align-self: center;
+    align-self: center;
+    display: block;
+    opacity: 0;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.header-ready .overlay .content{
+	-webkit-animation: headerfullwidthcontent 1s;
+    -moz-animation: headerfullwidthcontent 1s;
+    -ms-animation: headerfullwidthcontent 1s;
+    animation: headerfullwidthcontent 1s;
+    opacity: 1;
+}
+@-webkit-keyframes headerfullwidthcontent {
+	0%		{ -ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+@-moz-keyframes headerfullwidthcontent {
+	0%		{ -ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+@-o-keyframes headerfullwidthcontent {
+	0%		{ -ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+@keyframes headerfullwidthcontent {
+	0%		{-ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.dark .overlay .content{
+	color: #000;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay .content .title{
+	text-align: center;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay .content a{
+	color: #fff;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.dark .overlay .content a{
+	color: #000;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay .content a:hover,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay .content a:focus,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .overlay .content a:active{
+	color: #ccc;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.dark .overlay .content a:hover,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.dark .overlay .content a:focus,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.dark .overlay .content a:active{
+	color: #000;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.fullscreen .overlay .content{
+	padding: 40px 24px 30px 24px;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header .goto-bottom-header-anchor{
+	font-size: 20px;
+	position: absolute;
+	top: auto;
+	right: 0;
+	bottom: 72px;
+	left: 0;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.dark .goto-bottom-header-anchor{
+	color: #000;
+}
+@media screen and (max-width: 980px) {
+	.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_header.no-fullscreen .overlay {
+		min-height: 400px;
+	}
+}
+
+/**
+ * Divi modules - Content Fullwidth
+ */
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content {
+	position: relative;
+	background: transparent;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay{
+	position: relative;
+	/* flex */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.fullscreen .overlay{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.no-fullscreen .overlay {
+	min-height: 600px;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay .content{
+	max-width: 1048px;
+	margin: 0 auto;
+	padding: 140px 24px;
+	color: #000;
+	/* flex */
+    -webkit-align-self: center;
+    -moz-align-self: center;
+    -ms-align-self: center;
+    align-self: center;
+    display: block;
+    opacity: 0;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.content-ready .overlay .content{
+	-webkit-animation: contentfullwidthcontent 1s;
+    -moz-animation: contentfullwidthcontent 1s;
+    -ms-animation: contentfullwidthcontent 1s;
+    animation: contentfullwidthcontent 1s;
+    opacity: 1;
+}
+@-webkit-keyframes contentfullwidthcontent {
+	0%		{ -ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+@-moz-keyframes contentfullwidthcontent {
+	0%		{ -ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+@-o-keyframes contentfullwidthcontent {
+	0%		{ -ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+@keyframes contentfullwidthcontent {
+	0%		{-ms-transform: translate(0,40px); -webkit-transform: translate(0,40px); transform: translate(0,40px); opacity: 0;}
+	100%	{ -ms-transform: translate(0,0); -webkit-transform: translate(0,0); transform: translate(0,0); opacity: 1;}
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.light .overlay .content{
+	color: #fff;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay .content .title{
+	text-align: center;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay .content a{
+	color: #000;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.light .overlay .content a{
+	color: #fff;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay .content a:hover,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay .content a:focus,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content .overlay .content a:active{
+	color: #777;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.light .overlay .content a:hover,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.light .overlay .content a:focus,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.light .overlay .content a:active{
+	color: #fff;
+	text-decoration: underline;
+}
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.fullscreen .overlay .content{
+	padding: 40px 24px 30px 24px;
+}
+@media screen and (max-width: 980px) {
+	.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_fullwidth_content.no-fullscreen .overlay {
+		min-height: 400px;
+	}
+}
+
+/**
+ * Divi modules - Text & Image
+ */
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image{
+	padding: 24px 0;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content{
+	position: relative;
+	/* flex */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content:before{
+	content: "";
+	height: 1px;
+	width: 45%;
+	background: #dcdcdc;
+	position: absolute;
+	top: 0;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-right .content:before{
+	left: 0;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-left .content:before{
+	right: 0;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content .text,
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content .image{
+	width: 100%;
+	display: inline-block;
+	-webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+    /* flex */
+    -webkit-align-self: center;
+    -moz-align-self: center;
+    -ms-align-self: center;
+    align-self: center;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content .text{
+	padding: 24px 0;
+	text-align: justify;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content .image{
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content .image img{
+	width: 100%;
+	height: auto;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-right .content .text{
+	padding-right: 36px;
+}
+
+.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-left .content .text{
+	padding-left: 36px;
+}
+
+@media screen and (max-width: 980px) {
+	.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image .content{
+		position: relative;
+		/* flex */
+	    display: block;
+	    display: block;
+	    display: block;
+	    display: block;
+	}
+
+	.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-right .content .text{
+		padding-right: 0;
+		padding-bottom: 36px;
+	}
+	
+	.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-left .content .text{
+		padding-left: 0;
+		padding-bottom: 36px;
+	}
+	
+	.et_divi_builder #et_builder_outer_content .woody_woodcars_et_pb_text_image.image-left .image{
+		padding-top: 24px;
+	}
+}
+
+/**
+ * Divi module Entry
+ */
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry .title{
+	position: relative;
+	min-height: 100px;
+	text-align: center;
+	padding: 40px 24px 12px 24px;
+	color: #fff;
+	background: #e94f1b;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry .title i{
+	position: absolute;
+	font-size: 18px;
+	bottom: 6px;
+	left: 50%;
+	margin-left: -8px;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item{
+	position: relative;
+	width: 33.333333%;
+	background: #999;
+	margin: 0 0 24px 0;
+	padding: 0;
+	float: left;
+	display: inline-block;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item .container{
+	background: #fff;
+	padding: 24px;
+	min-height: 280px;
+	/* flex */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item .container .text{
+	width: 100%;
+	text-align: center;
+	padding: 3px 12px;
+	background: #fff;
+	background: rgba(255,255,255,0.7);
+	-webkit-transition: all .2s ease-in-out !important;
+    -moz-transition: all .2s ease-in-out !important;
+    -o-transition: all .2s ease-in-out !important;
+    -ms-transition: all .2s ease-in-out !important;
+    transition: all .2s ease-in-out !important;
+	/* flex */
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item:hover .container .text,
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item:focus .container .text,
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item:active .container .text{
+	background: #fff;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item .container .text .title{
+	min-height: 0;
+	padding: 0;
+	color: #e94f1b;
+	background: none;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item .container .text .excerpt{
+	color: #e94f1b;
+}
+
+#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item .container .more{
+	position: absolute;
+	bottom: -14px;
+	left: 50%;
+	margin-left: -80px;
+	width: 160px;
+	padding: 6px 12px;
+	background: #e94f1b;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+@media screen and (max-width: 800px) {
+	#et_builder_outer_content .woody_woodcars_et_pb_fullwidth_entry_item{
+		width: 100%;
+		float: none;
+		display: block;
+	}
 }

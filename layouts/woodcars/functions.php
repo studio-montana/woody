@@ -20,10 +20,28 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+define('WOODCARS_LAYOUT_SLUG', 'woodcars');
+
+if (!class_exists('Woodcars')){ // This theme needs Woodcars
+	function woody_woodcars_woody_dependencies(){
+		$class = 'notice notice-warning is-dismissible';
+		$message = __('Notice : your theme layout needs <strong>Woodcars</strong> plugin.', 'woody');
+		$message_2 = __('Please look at Woodcars plugin website.', 'woodcars');
+		$message_url = "http://www.seb-c.com/produits/woodcars";
+		printf( '<div class="%1$s"><p>%2$s&nbsp;<a href="%3$s" target="_blank">%4$s</a></p></div>', $class, $message, $message_url, $message_2);
+	}
+	add_action('admin_notices', "woody_woodcars_woody_dependencies");
+}
+
 /**
  * Unregister Divi post-types
  */
-function woodychild_delete_divi_post_types(){
+function woody_woodcars_delete_divi_post_types(){
 	unregister_post_type('project');
 }
-add_action('init','woodychild_delete_divi_post_types');
+add_action('init','woody_woodcars_delete_divi_post_types');
+
+/**
+ * Divi Builder modules
+*/
+require_once(get_stylesheet_directory().'/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/divi.php');
