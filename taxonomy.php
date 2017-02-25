@@ -24,31 +24,31 @@ $woody_layout = woody_get_layout();
 if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
 	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
 }else{
-
+	
 	get_header();?>
 	
-		<div id="primary" class="content-area single">
+		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 	
-				<?php 
-				while ( have_posts() ) : the_post();
+			<?php if ( have_posts() ) : ?>
+				<header class="archive-header">
+					<h1 class="archive-title"><i class="icon-tag"></i><?php printf( __('%s Archives', 'woody'), '<span>' . get_post_format_string( get_post_format() ) . '</span>'); ?></h1>
+				</header><!-- .archive-header -->
 	
-					get_template_part('content', get_post_type());
-					 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+				<?php /* The loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part('content', get_post_type()); ?>
+				<?php endwhile; ?>
 	
-				endwhile;
-				?>
+			<?php else : ?>
+				<?php get_template_part('content', 'none'); ?>
+			<?php endif; ?>
 	
 			</div><!-- #content -->
 		</div><!-- #primary -->
-		
+	
 	<?php
 	get_sidebar();
 	get_footer();
-	
 }
 ?>

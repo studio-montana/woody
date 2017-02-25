@@ -20,8 +20,12 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-
-get_header();?>
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	
+	get_header();?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
@@ -47,7 +51,8 @@ get_header();?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+	<?php
+	get_sidebar();
+	get_footer();
+}
 ?>

@@ -1,6 +1,5 @@
 /**
- Theme Name: Woody
- Theme URI: http://lab.studio-montana.com/woody-theme/
+ Layout Name: Woodcars
  Author: Studio Montana (Sebastien Chandonay / Cyril Tissot)
  Author URI: http://www.studio-montana.com
  License: GNU General Public License v2 or later
@@ -9,10 +8,7 @@
  This theme, like WordPress, is licensed under the GPL.
  Use it to make something cool, have fun, and share what you've learned with others.
  */
-@import url('woody.css');
 
-body {
-	padding: 0;
-	background: #fff;
-	border: none;
-}
+(function($) {
+
+})(jQuery);

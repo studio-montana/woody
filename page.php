@@ -20,29 +20,33 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-
-get_header();?>
-
-	<div id="primary" class="content-area page">
-		<div id="content" class="site-content" role="main">
-
-			<?php 
-			while ( have_posts() ) : the_post();
-
-				get_template_part('content', 'page');
-				 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile;
-			?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	get_header();?>
+	
+		<div id="primary" class="content-area page">
+			<div id="content" class="site-content" role="main">
+	
+				<?php 
+				while ( have_posts() ) : the_post();
+	
+					get_template_part('content', 'page');
+					 
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					}
+	
+				endwhile;
+				?>
+	
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	
+	<?php
+	get_sidebar();
+	get_footer();
+}
 ?>

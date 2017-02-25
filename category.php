@@ -21,33 +21,39 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-get_header();?>
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h1 class="archive-title"><i class="icon-tag"></i><?php echo single_cat_title('', false ); ?></h1>
-
-				<?php if ( category_description() ) : // Show an optional category description ?>
-				<div class="archive-meta"><?php echo category_description(); ?></div>
-				<?php endif; ?>
-			</header><!-- .archive-header -->
-
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part('content', 'resume'); ?>
-			<?php endwhile; ?>
-
-		<?php else : ?>
-			<?php get_template_part('content', 'none'); ?>
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+	get_header();?>
+	
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+	
+			<?php if ( have_posts() ) : ?>
+				<header class="archive-header">
+					<h1 class="archive-title"><i class="icon-tag"></i><?php echo single_cat_title('', false ); ?></h1>
+	
+					<?php if ( category_description() ) : // Show an optional category description ?>
+					<div class="archive-meta"><?php echo category_description(); ?></div>
+					<?php endif; ?>
+				</header><!-- .archive-header -->
+	
+				<?php /* The loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part('content', 'resume'); ?>
+				<?php endwhile; ?>
+	
+			<?php else : ?>
+				<?php get_template_part('content', 'none'); ?>
+			<?php endif; ?>
+	
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	
+	<?php
+	get_sidebar();
+	get_footer();
+}
 ?>

@@ -20,38 +20,42 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-
-get_header();?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><i class="icon-search"></i><?php printf( __("'%s' results", 'woody'), get_search_query() ); ?></h1>
-			</header>
-
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part('content', 'resume'); ?>
-			<?php endwhile; ?>
-
-			<?php // Previous/next page navigation.
-			the_posts_pagination( array(
-					'prev_text'          => __( 'Previous page', 'woody'),
-					'next_text'          => __( 'Next page', 'woody'),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'woody') . ' </span>',
-				)); ?>
-
-		<?php else : ?>
-			<?php get_template_part('content', 'none'); ?>
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	get_header();?>
+	
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+	
+			<?php if ( have_posts() ) : ?>
+	
+				<header class="page-header">
+					<h1 class="page-title"><i class="icon-search"></i><?php printf( __("'%s' results", 'woody'), get_search_query() ); ?></h1>
+				</header>
+	
+				<?php /* The loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part('content', 'resume'); ?>
+				<?php endwhile; ?>
+	
+				<?php // Previous/next page navigation.
+				the_posts_pagination( array(
+						'prev_text'          => __( 'Previous page', 'woody'),
+						'next_text'          => __( 'Next page', 'woody'),
+						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'woody') . ' </span>',
+					)); ?>
+	
+			<?php else : ?>
+				<?php get_template_part('content', 'none'); ?>
+			<?php endif; ?>
+	
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	
+	<?php
+	get_sidebar();
+	get_footer();
+}
 ?>

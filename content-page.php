@@ -21,71 +21,76 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-$display_title = true;
-if (function_exists('woody_is_display_content_page_title')){
-	$display_title = woody_is_display_content_page_title();
-}
-$display_meta = true;
-if (function_exists('woody_is_display_content_page_meta')){
-	$display_meta = woody_is_display_content_page_meta();
-}
-if (!function_exists('woody_entry_meta')){
-	$display_meta = false;
-}
-$display_thumbnail = true;
-if (function_exists('woody_is_display_content_page_thumbnail')){
-	$display_thumbnail = woody_is_display_content_page_thumbnail();
-}
-if (post_password_required() || !has_post_thumbnail()){
-	$display_thumbnail = false;
-}
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-page'); ?>>
+	$display_title = true;
+	if (function_exists('woody_is_display_content_page_title')){
+		$display_title = woody_is_display_content_page_title();
+	}
+	$display_meta = true;
+	if (function_exists('woody_is_display_content_page_meta')){
+		$display_meta = woody_is_display_content_page_meta();
+	}
+	if (!function_exists('woody_entry_meta')){
+		$display_meta = false;
+	}
+	$display_thumbnail = true;
+	if (function_exists('woody_is_display_content_page_thumbnail')){
+		$display_thumbnail = woody_is_display_content_page_thumbnail();
+	}
+	if (post_password_required() || !has_post_thumbnail()){
+		$display_thumbnail = false;
+	}
 	
-	<?php if ($display_title || $display_thumbnail || $display_meta){ ?>
-	
-		<header class="entry-header">
-	
-			<?php if ($display_thumbnail){ ?>
-				<div class="entry-thumbnail">
-					<?php the_post_thumbnail('post-content'); ?>
-				</div>
-			<?php } ?>
-
-			<?php if ($display_title){ ?>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php } ?>
-
-			<?php if ($display_meta){ ?>
-				<div class="entry-meta"><?php woody_entry_meta(); ?></div>
-			<?php } ?>
-			
-		</header>
+	?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('content-page'); ?>>
 		
-	<?php } ?>
+		<?php if ($display_title || $display_thumbnail || $display_meta){ ?>
+		
+			<header class="entry-header">
+		
+				<?php if ($display_thumbnail){ ?>
+					<div class="entry-thumbnail">
+						<?php the_post_thumbnail('post-content'); ?>
+					</div>
+				<?php } ?>
 	
-	<div class="entry-content">
-		<?php the_content(); ?>
-	</div><!-- .entry-content -->
+				<?php if ($display_title){ ?>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+				<?php } ?>
 	
-	<?php if (function_exists("woodkit_pagination")){
-		woodkit_pagination(array(), true, '<div class="pagination">', '</div>', '<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'); 
-	}else{ 
-		wp_link_pages( array(
-			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'woody') . '</span>',
-			'after'       => '</div>',
-			'link_before' => '<span>',
-			'link_after'  => '</span>',
-			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'woody') . ' </span>%',
-			'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-	} ?>
-
-	<footer class="entry-meta">
-		<?php if (is_single() && get_the_author_meta('description') && is_multi_author()) : ?>
-			<?php get_template_part('author-bio'); ?>
-		<?php endif; ?>
-	</footer><!-- .entry-meta -->
-</article><!-- #post -->
+				<?php if ($display_meta){ ?>
+					<div class="entry-meta"><?php woody_entry_meta(); ?></div>
+				<?php } ?>
+				
+			</header>
+			
+		<?php } ?>
+		
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div><!-- .entry-content -->
+		
+		<?php if (function_exists("woodkit_pagination")){
+			woodkit_pagination(array(), true, '<div class="pagination">', '</div>', '<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'); 
+		}else{ 
+			wp_link_pages( array(
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'woody') . '</span>',
+				'after'       => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'woody') . ' </span>%',
+				'separator'   => '<span class="screen-reader-text">, </span>',
+				) );
+		} ?>
+	
+		<footer class="entry-meta">
+			<?php if (is_single() && get_the_author_meta('description') && is_multi_author()) : ?>
+				<?php get_template_part('author-bio'); ?>
+			<?php endif; ?>
+		</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+<?php } ?>

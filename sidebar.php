@@ -20,12 +20,18 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-
-if (is_active_sidebar('sidebar')) : ?>
-	<div id="sidebar" class="sidebar-container" role="complementary">
-		<div class="widget-area">
-			<?php dynamic_sidebar('sidebar'); ?>
-		</div><!-- .widget-area -->
-		<div class="clear"></div>
-	</div><!-- #sidebar -->
-<?php endif; ?>
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	
+	if (is_active_sidebar('sidebar')) : ?>
+		<div id="sidebar" class="sidebar-container" role="complementary">
+			<div class="widget-area">
+				<?php dynamic_sidebar('sidebar'); ?>
+			</div><!-- .widget-area -->
+			<div class="clear"></div>
+		</div><!-- #sidebar -->
+	<?php endif; ?>
+	
+<?php } ?>

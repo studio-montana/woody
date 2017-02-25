@@ -21,21 +21,25 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-/**
- * WooCommerce Supports (theme's supports - http://docs.woothemes.com/document/third-party-woodkit-theme-compatibility/)
- */
-
-get_header();?>
-
-	<div id="primary" class="content-area page">
-		<div id="content" class="site-content" role="main">
-			<article>
-				<?php woocommerce_content(); ?>
-			</article>
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	/**
+	 * WooCommerce Supports (theme's supports - http://docs.woothemes.com/document/third-party-woodkit-theme-compatibility/)
+	 */
+	get_header();?>
+	
+		<div id="primary" class="content-area page">
+			<div id="content" class="site-content" role="main">
+				<article>
+					<?php woocommerce_content(); ?>
+				</article>
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	
+	<?php
+	get_sidebar();
+	get_footer();
+}
 ?>

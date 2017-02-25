@@ -20,60 +20,64 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-
-get_header();?>
-
-	<div id="primary" class="content-area">
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	get_header();?>
 	
-		<div id="content" class="site-content" role="main">
+		<div id="primary" class="content-area">
 		
-		<?php 
-		// display blog page title 
-		$blog_page = get_page(get_option('page_for_posts'));
-		if ($blog_page){
-			global $post;
-			$post = $blog_page;
-			setup_postdata($post);
-			get_template_part('content', 'page-blog');
-			wp_reset_postdata();
-		}
-		// display blog posts
-		if ( have_posts() ) :
-			while ( have_posts() ) : the_post();
-				get_template_part('content', 'resume');
-			endwhile;
-		else :
-			get_template_part('content', 'none');
-		endif;
-		?>
-		
-		<div style="clear: both;"></div>
-		
-		<?php 
-		// display blog page pagination
-		$blog_page = get_page(get_option('page_for_posts'));
-		if ($blog_page){
-			global $post;
-			$post = $blog_page;
-			setup_postdata($post);
-			if (function_exists("woodkit_pagination")){
-				woodkit_pagination(array(), true, '<div class="pagination">', '</div>', '<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>');
-			}else{
-				// Previous/next page navigation.
-				the_posts_pagination( array(
-						'prev_text'          => __( 'Previous page', 'woody'),
-						'next_text'          => __( 'Next page', 'woody'),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'woody') . ' </span>',
-					));
+			<div id="content" class="site-content" role="main">
+			
+			<?php 
+			// display blog page title 
+			$blog_page = get_page(get_option('page_for_posts'));
+			if ($blog_page){
+				global $post;
+				$post = $blog_page;
+				setup_postdata($post);
+				get_template_part('content', 'page-blog');
+				wp_reset_postdata();
 			}
-			wp_reset_postdata();
-		}
-		?>
-		
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+			// display blog posts
+			if ( have_posts() ) :
+				while ( have_posts() ) : the_post();
+					get_template_part('content', 'resume');
+				endwhile;
+			else :
+				get_template_part('content', 'none');
+			endif;
+			?>
+			
+			<div style="clear: both;"></div>
+			
+			<?php 
+			// display blog page pagination
+			$blog_page = get_page(get_option('page_for_posts'));
+			if ($blog_page){
+				global $post;
+				$post = $blog_page;
+				setup_postdata($post);
+				if (function_exists("woodkit_pagination")){
+					woodkit_pagination(array(), true, '<div class="pagination">', '</div>', '<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>');
+				}else{
+					// Previous/next page navigation.
+					the_posts_pagination( array(
+							'prev_text'          => __( 'Previous page', 'woody'),
+							'next_text'          => __( 'Next page', 'woody'),
+							'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'woody') . ' </span>',
+						));
+				}
+				wp_reset_postdata();
+			}
+			?>
+			
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	
+	<?php
+	get_sidebar();
+	get_footer();
+}
 ?>

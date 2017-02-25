@@ -20,19 +20,24 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-?>
-<article class="content-none">
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php if (is_search()){ ?>
-				<i class="icon-search"></i>
-				<?php _e('No result', 'woody'); ?>
-			<?php }else{ ?>
-				<?php _e('No content', 'woody'); ?>
-			<?php } ?>
-		</h1>
-	</header>
-	
-	<div class="page-content">
-	</div><!-- .page-content -->
-</article>
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	?>
+	<article class="content-none">
+		<header class="page-header">
+			<h1 class="page-title">
+				<?php if (is_search()){ ?>
+					<i class="icon-search"></i>
+					<?php _e('No result', 'woody'); ?>
+				<?php }else{ ?>
+					<?php _e('No content', 'woody'); ?>
+				<?php } ?>
+			</h1>
+		</header>
+		
+		<div class="page-content">
+		</div><!-- .page-content -->
+	</article>
+<?php } ?>

@@ -21,60 +21,67 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-$display_title = true;
-if (function_exists('woody_is_display_content_resume_title')){
-	$display_title = woody_is_display_content_resume_title();
-}
-$display_meta = true;
-if (function_exists('woody_is_display_content_resume_meta')){
-	$display_meta = woody_is_display_content_resume_meta();
-}
-if (!function_exists('woody_entry_meta')){
-	$display_meta = false;
-}
-$display_thumbnail = true;
-if (function_exists('woody_is_display_content_resume_thumbnail')){
-	$display_thumbnail = woody_is_display_content_resume_thumbnail();
-}
-if (post_password_required() || !has_post_thumbnail()){
-	$display_thumbnail = false;
-}
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-resume'); ?>>
-
-
-	<?php if ($display_title || $display_thumbnail || $display_meta){ ?>
+	$display_title = true;
+	if (function_exists('woody_is_display_content_resume_title')){
+		$display_title = woody_is_display_content_resume_title();
+	}
+	$display_meta = true;
+	if (function_exists('woody_is_display_content_resume_meta')){
+		$display_meta = woody_is_display_content_resume_meta();
+	}
+	if (!function_exists('woody_entry_meta')){
+		$display_meta = false;
+	}
+	$display_thumbnail = true;
+	if (function_exists('woody_is_display_content_resume_thumbnail')){
+		$display_thumbnail = woody_is_display_content_resume_thumbnail();
+	}
+	if (post_password_required() || !has_post_thumbnail()){
+		$display_thumbnail = false;
+	}
 	
-		<header class="entry-header">
+	?>
 	
-			<?php if ($display_thumbnail){ ?>
-				<div class="entry-thumbnail">
-					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_post_thumbnail('post-content'); ?></a>
-				</div>
-			<?php } ?>
-
-			<?php if ($display_title){ ?>
-				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a></h1>
-			<?php } ?>
-
-			<?php if ($display_meta){ ?>
-				<div class="entry-meta"><?php woody_entry_meta(); ?></div>
-			<?php } ?>
-			
-		</header>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('content-resume'); ?>>
+	
+	
+		<?php if ($display_title || $display_thumbnail || $display_meta){ ?>
 		
-	<?php } ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+			<header class="entry-header">
+		
+				<?php if ($display_thumbnail){ ?>
+					<div class="entry-thumbnail">
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_post_thumbnail('post-content'); ?></a>
+					</div>
+				<?php } ?>
 	
-	<?php if (comments_open() && ! is_single()) : ?>
-		<footer class="comments-link">
-			<?php comments_popup_link('<span class="leave-reply">' . __('Comment', 'woody') . '</span>', __('One comment', 'woody'), __('See % comments', 'woody') ); ?>
-		</footer><!-- .comments-link -->
-	<?php endif; // comments_open() ?>
+				<?php if ($display_title){ ?>
+					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a></h1>
+				<?php } ?>
 	
-</article><!-- #post -->
+				<?php if ($display_meta){ ?>
+					<div class="entry-meta"><?php woody_entry_meta(); ?></div>
+				<?php } ?>
+				
+			</header>
+			
+		<?php } ?>
+	
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
+		
+		<?php if (comments_open() && ! is_single()) : ?>
+			<footer class="comments-link">
+				<?php comments_popup_link('<span class="leave-reply">' . __('Comment', 'woody') . '</span>', __('One comment', 'woody'), __('See % comments', 'woody') ); ?>
+			</footer><!-- .comments-link -->
+		<?php endif; // comments_open() ?>
+		
+	</article><!-- #post -->
+	
+<?php } ?>

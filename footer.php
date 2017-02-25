@@ -20,18 +20,23 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-?>
-				<div style="clear: both;"></div>
-			</div><!-- main container -->
-		</div><!-- #main -->
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="site-footer-container">
-				<div class="copy"><?php echo bloginfo('name')."&nbsp;&copy;&nbsp;".date('Y'); ?></div>
-				<?php wp_nav_menu(array('theme_location' => 'footer', 'menu_class' => 'nav-footer')); ?>
-			</div>
-		</footer><!-- #colophon -->
-	</div><!-- #page -->
-
-	<?php wp_footer(); ?>
-</body>
-</html>
+$woody_layout = woody_get_layout();
+if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__))){
+	include get_template_directory().'/layouts/'.$woody_layout.'/'.basename(__FILE__);
+}else{
+	?>
+					<div style="clear: both;"></div>
+				</div><!-- main container -->
+			</div><!-- #main -->
+			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="site-footer-container">
+					<div class="copy"><?php echo bloginfo('name')."&nbsp;&copy;&nbsp;".date('Y'); ?></div>
+					<?php wp_nav_menu(array('theme_location' => 'footer', 'menu_class' => 'nav-footer')); ?>
+				</div>
+			</footer><!-- #colophon -->
+		</div><!-- #page -->
+	
+		<?php wp_footer(); ?>
+	</body>
+	</html>
+<?php } ?>
