@@ -57,25 +57,29 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 		<?php if (function_exists("woodkit_splashscreen")){ woodkit_splashscreen(); }; ?>
 	
 		<div id="page" class="hfeed site">
-		
-			<header id="masthead" class="site-header" role="banner">
+
+			<?php 
+			$custom_logo = '';
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			if (!empty($custom_logo_id)) {
+				$custom_logo = (function_exists('get_custom_logo')) ? get_custom_logo() : '';
+			}
+			?>
+
+			<header id="masthead" class="site-header <?php echo (empty($custom_logo) ? "no-site-logo" : "has-site-logo"); ?>" role="banner">
 				<div class="site-header-container">
 					<div class="site-branding">
 						<div class="site-branding-container">
 							<?php 
-							$custom_logo_id = get_theme_mod( 'custom_logo' );
-							$custom_logo = (function_exists('get_custom_logo')) ? get_custom_logo() : '';
-							if (!empty($custom_logo_id) && !empty($custom_logo)) {
+							if (!empty($custom_logo)) {
 								echo $custom_logo;
-							} else if (function_exists("logo_has") && logo_has() && function_exists("logo_display")){ ?>
-								<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php logo_display(array("class" => "site-logo", "alt" => esc_attr(get_bloginfo('name')))); ?></a>
-							<?php }else{ ?>
+							} else{ ?>
 								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 							<?php } ?>
 							<?php
 							$description = get_bloginfo('description', 'display');
 							if ($description || is_customize_preview()){ ?>
-								<p class="site-description"><?php echo $description; ?></p>
+								<p class="site-description"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php echo $description; ?></a></p>
 							<?php } ?>
 						</div>
 					</div><!-- .site-branding -->

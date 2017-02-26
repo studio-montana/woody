@@ -54,7 +54,7 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 		
 				<?php if ($display_thumbnail){ ?>
 					<div class="entry-thumbnail">
-						<?php the_post_thumbnail('post-content'); ?>
+						<?php the_post_thumbnail(); ?>
 					</div>
 				<?php } ?>
 	

@@ -56,7 +56,7 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 		
 				<?php if ($display_thumbnail){ ?>
 					<div class="entry-thumbnail">
-						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_post_thumbnail('post-content'); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_post_thumbnail(); ?></a>
 					</div>
 				<?php } ?>
 	

@@ -14,9 +14,16 @@
 	$(document).ready(function() {
 		
 		/**
-		 * header manager
+		 * no divi manager
 		 */
-		if (!$(".entry-content .et_pb_section:first-child div:first-child").hasClass("travelone_et_pb_header")){
+		if ($("#et_builder_outer_content").length < 1){
+			$("body").addClass("no-divi");
+		}
+		
+		/**
+		 * no divi header manager
+		 */
+		if (!$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woody_woodcars_et_pb_header") && !$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woodcars_et_pb_header")){
 			$("body").addClass("no-divi-header");
 		}
 

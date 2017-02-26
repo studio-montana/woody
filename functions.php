@@ -91,8 +91,20 @@ function woody_setup() {
 	 * This theme uses a custom image size for featured images, displayed on "standard" posts and pages.
 	 */
 	add_theme_support ( 'post-thumbnails' );
-	set_post_thumbnail_size ( 1200, 300, true );
-	add_image_size ( 'post-content', 1200, 400, true );
+	set_post_thumbnail_size ( 1200, 400, true );
+	add_image_size ( 'woody-small', 200 );
+	add_image_size ( 'woody-medium', 600 );
+	add_image_size ( 'woody-large', 900 );
+	add_image_size ( 'woody-xlarge', 1200 );
+	add_image_size ( 'woody-xxlarge', 1600 );
+	add_image_size ( 'woody-landscape-small', 200, 105, true );
+	add_image_size ( 'woody-landscape-medium', 600, 315, true );
+	add_image_size ( 'woody-landscape-large', 900, 475, true );
+	add_image_size ( 'woody-landscape-xlarge', 1200, 635, true );
+	add_image_size ( 'woody-square-small', 200, 200, true );
+	add_image_size ( 'woody-square-medium', 600, 600, true );
+	add_image_size ( 'woody-square-large', 900, 900, true );
+	add_image_size ( 'woody-square-xlarge', 1200, 1200, true );
 	
 	/*
 	 * This theme supports logo
@@ -291,6 +303,7 @@ if (! function_exists ( "woody_get_current_url" )) :
 	}
 
 
+
 endif;
 
 if (! function_exists ( "woody_get_protocol" )) :
@@ -305,6 +318,7 @@ if (! function_exists ( "woody_get_protocol" )) :
 		}
 		return $protocol;
 	}
+
 
 
 endif;
@@ -351,6 +365,7 @@ if (! function_exists ( 'woody_entry_meta' )) :
 	}
 
 
+
 endif;
 
 if (! function_exists ( 'woody_entry_date' )) :
@@ -377,6 +392,7 @@ if (! function_exists ( 'woody_entry_date' )) :
 		
 		return $date;
 	}
+
 
 
 endif;
@@ -406,6 +422,7 @@ if (! function_exists ( "woody_get_displayed_post_types" )) :
 	}
 
 
+
 endif;
 
 if (! function_exists ( "woody_cmp_posttypes" )) :
@@ -417,6 +434,7 @@ if (! function_exists ( "woody_cmp_posttypes" )) :
 		$current_post_type_label_2 = get_post_type_labels ( get_post_type_object ( $post_type_2 ) );
 		return strcmp ( $current_post_type_label_1->name, $current_post_type_label_2->name );
 	}
+
 
 
 endif;
@@ -449,6 +467,7 @@ if (! function_exists ( "woody_get_layout" )) :
 		}
 		return $woody_layout;
 	}
+
 
 endif;
 

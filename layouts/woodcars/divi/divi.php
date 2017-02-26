@@ -31,6 +31,7 @@ function woody_woodcars_divi_add_module_after() {
 	require_once (get_stylesheet_directory () . '/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/modules/fullwidth-content.php');
 	require_once (get_stylesheet_directory () . '/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/modules/fullwidth-entry.php');
 	require_once (get_stylesheet_directory () . '/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/modules/fullwidth-entry-item.php');
+	require_once (get_stylesheet_directory () . '/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/modules/fullwidth-separator.php');
 	require_once (get_stylesheet_directory () . '/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/modules/text-image.php');
 }
 add_action ( "woodkit_divi_add_module_after", "woody_woodcars_divi_add_module_after" );
