@@ -35,7 +35,6 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry extends ET_Builder_Module
 		$this->child_item_text  = esc_html__('Entry item', 'woody');
 
 		$this->whitelisted_fields = array(
-				'module_title',
 				'admin_label',
 				'module_class',
 		);
@@ -47,11 +46,6 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry extends ET_Builder_Module
 
 		$fields = array(
 				// General
-				'module_title' => array(
-						'label'					=> esc_html__('Title', 'woody'),
-						'type'					=> 'text',
-						'option_category'    	=> 'basic_option',
-				),
 				'admin_label' => array(
 						'label'       			=> esc_html__('Admin Label', 'et_builder'),
 						'type'        			=> 'text',

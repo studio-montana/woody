@@ -23,7 +23,7 @@
 		/**
 		 * no divi header manager
 		 */
-		if (!$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woody_woodcars_et_pb_header") && !$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woodcars_et_pb_header")){
+		if (!$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woody_woodcars_et_pb_header") && !$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woodcars_et_pb_header")  && !$(".entry-content .et_pb_section:first-child div:first-child").hasClass("woodcars_et_pb_vehiclessearch")){
 			$("body").addClass("no-divi-header");
 		}
 

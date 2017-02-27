@@ -33,13 +33,6 @@ $this->shortcode_content = trim(et_builder_replace_code_content_entities($this->
 <div class="woody_woodcars_et_pb woody_woodcars_et_pb_fullwidth_entry <?php echo esc_attr($class." ".$module_class); ?>">
 	<div class="container">
 	
-		<?php if (!empty($module_title)){ ?>
-		<div class="title">
-			<span><?php echo $module_title; ?></span>
-			<i class="fa fa-caret-down"></i>
-		</div>
-		<?php } ?>
-		
 		<div class="items">
 			<?php echo $this->shortcode_content; ?>
 		</div>

@@ -45,3 +45,50 @@ add_action('init','woody_woodcars_delete_divi_post_types');
  * Divi Builder modules
 */
 require_once(get_stylesheet_directory().'/layouts/'.WOODCARS_LAYOUT_SLUG.'/divi/divi.php');
+
+/**
+ * Woodcars layout setup.
+ *
+ * @return void
+ *
+ */
+function woody_woodcars_setup() {
+
+	/** Customizer */
+	include (get_template_directory () . '/layouts/'.WOODCARS_LAYOUT_SLUG.'/inc/customizer.php');
+}
+add_action ( 'after_setup_theme', 'woody_woodcars_setup' );
+
+/**
+ *  Woodcars default vehicle make color
+ */
+function woody_woodcars_woodcars_default_make_color($color_hex){
+	return "#ffd800";
+}
+add_filter("woodcars_default_make_color", "woody_woodcars_woodcars_default_make_color");
+
+/**
+ * Single vehicle template
+ */
+function woody_woodcars_woodcars_template_single_vehicle_after(){
+	?>
+	<div class="contact-buttons">
+		<?php 
+		$current_lang = strtolower(get_current_lang());
+		$phone = get_theme_mod('woody_woodcars_phonenumber_'.$current_lang);
+		if (!empty($phone)){
+			?>
+			<a class="tel" href="tel:<?php echo esc_attr(str_replace(" ", "", $phone)); ?>"><i class="fa fa-phone"></i><span class="text"><?php _e("Call us", 'woody'); ?></span><span class="number"><?php echo $phone; ?></span></a>
+			<?php 
+		}
+		$contact = get_theme_mod('woody_woodcars_contactpage_'.$current_lang);
+		if (!empty($contact)){
+			?>
+			<a class="contact" href="<?php echo get_the_permalink($contact); ?>"><i class="fa fa-envelope"></i><span class="text"><?php _e("Contact us", 'woody'); ?></span></a>
+			<?php 
+		}
+		?>
+	</div>
+	<?php
+}
+add_action('woodcars_template_single_vehicle_after', 'woody_woodcars_woodcars_template_single_vehicle_after');
