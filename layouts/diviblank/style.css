@@ -1199,6 +1199,7 @@ blockquote b,
  */
 #masthead{
 	background: rgba(255,255,255,1);
+	border-bottom: 1px solid #dfdfdf;
 	position: fixed;
 	top: 0;
 	left: 0;
