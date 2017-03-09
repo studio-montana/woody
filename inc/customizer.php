@@ -31,8 +31,10 @@ function woody_customize_register($wp_customize_manager) {
 		foreach ( $wpml_langs as $code => $al ) {
 			$langs [] = strtolower ( $code );
 		}
-	} else {
+	} else if(function_exists("get_current_lang")) {
 		$langs [] = strtolower ( get_current_lang () );
+	}else{
+		$langs [] = "nolang";
 	}
 	
 	// ------ Theme Layout section
@@ -48,6 +50,7 @@ function woody_customize_register($wp_customize_manager) {
 			'type' => 'select',
 			'choices' => array (
 					"none" => __ ( 'No layout', 'woody' ),
+					"diviblank" => __ ( 'Divi blank', 'woody' ),
 					"woodcars" => __ ( 'Woodcars', 'woody' ) 
 			) 
 	) );

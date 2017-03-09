@@ -1278,13 +1278,15 @@ body.admin-bar #masthead{
     transition: padding 200ms linear;
 }
 
-.main-navigation .nav > li {
+.main-navigation .nav > li,
+.main-navigation .nav > ul > li {
 	padding: 0;
     margin: 0;
     line-height: normal;
 }
 
-.main-navigation .nav > li a{
+.main-navigation .nav > li a,
+.main-navigation .nav > ul > li a{
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 1;
@@ -1303,13 +1305,15 @@ body.admin-bar #masthead{
     transition: all 200ms linear;
 }
 
-.main-navigation .nav > li > a{
+.main-navigation .nav > li > a,
+.main-navigation .nav > ul > li > a{
 	margin: 0 12px 19px 12px;
 }
 
 .main-navigation .nav li:hover > a,
 .main-navigation .nav li:focus > a,
-.main-navigation .nav li:active > a{
+.main-navigation .nav li:active > a,
+{
 	text-decoration: none;
 	color: #fff000;
 }
@@ -1336,14 +1340,20 @@ body.admin-bar #masthead{
 
 .main-navigation .nav > li:hover:last-child ul.sub-menu,
 .main-navigation .nav > li:focus:last-child ul.sub-menu,
-.main-navigation .nav > li:active:last-child ul.sub-menu{
+.main-navigation .nav > li:active:last-child ul.sub-menu,
+.main-navigation .nav > ul > li:hover:last-child ul.sub-menu,
+.main-navigation .nav > ul > li:focus:last-child ul.sub-menu,
+.main-navigation .nav > ul > li:active:last-child ul.sub-menu{
 	right: 0;
 	text-align: right;
 }
 
 .main-navigation .nav > li:hover ul.sub-menu,
 .main-navigation .nav > li:focus ul.sub-menu,
-.main-navigation .nav > li:active ul.sub-menu{
+.main-navigation .nav > li:active ul.sub-menu,
+.main-navigation .nav > ul > li:hover ul.sub-menu,
+.main-navigation .nav > ul > li:focus ul.sub-menu,
+.main-navigation .nav > ul > li:active ul.sub-menu{
     opacity: 1;
     height: auto;
     display: block;
@@ -1375,7 +1385,10 @@ body.admin-bar #masthead{
 
 .main-navigation .nav > li:hover ul.sub-menu li,
 .main-navigation .nav > li:focus ul.sub-menu li,
-.main-navigation .nav > li:active ul.sub-menu li{
+.main-navigation .nav > li:active ul.sub-menu li,
+.main-navigation .nav > ul > li:hover ul.sub-menu li,
+.main-navigation .nav > ul > li:focus ul.sub-menu li,
+.main-navigation .nav > ul > li:active ul.sub-menu li{
 	-webkit-animation: sub-menu-li-anim 0.5s 1;
 	-moz-animation:    sub-menu-li-anim 0.5s 1;
 	-o-animation:      sub-menu-li-anim 0.5s 1;
@@ -1514,7 +1527,8 @@ body.responsive-header.menu-toggled .main-navigation .nav{
 	width: 100%;
 }
 
-body.responsive-header .main-navigation .nav > li {
+body.responsive-header .main-navigation .nav > li,
+body.responsive-header .main-navigation .nav > ul > li {
     display: block;
     width: 100%;
     margin: 0;
@@ -1524,7 +1538,8 @@ body.responsive-header .main-navigation .nav > li {
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-body.responsive-header .main-navigation .nav > li > a{
+body.responsive-header .main-navigation .nav > li > a,
+body.responsive-header .main-navigation .nav > ul > li > a{
 	font-size: 16px;
 	margin: 0 !important;
 	text-transform: uppercase;
@@ -1570,7 +1585,10 @@ body.responsive-header .main-navigation .nav ul.sub-menu li a{
 
 body.responsive-header.menu-toggled .main-navigation .nav > li,
 body.responsive-header.menu-toggled .main-navigation .nav > li,
-body.responsive-header.menu-toggled .main-navigation .nav > li{
+body.responsive-header.menu-toggled .main-navigation .nav > li,
+body.responsive-header.menu-toggled .main-navigation .nav > ul > li,
+body.responsive-header.menu-toggled .main-navigation .nav > ul > li,
+body.responsive-header.menu-toggled .main-navigation .nav > ul > li{
 	-webkit-animation: submenu-lirespanim 0.5s 1;
 	-moz-animation:    submenu-lirespanim 0.5s 1;
 	-o-animation:      submenu-lirespanim 0.5s 1;
@@ -1579,7 +1597,10 @@ body.responsive-header.menu-toggled .main-navigation .nav > li{
 
 body.responsive-header .main-navigation .nav > li:hover ul.sub-menu li,
 body.responsive-header .main-navigation .nav > li:focus ul.sub-menu li,
-body.responsive-header .main-navigation .nav > li:active ul.sub-menu li{
+body.responsive-header .main-navigation .nav > li:active ul.sub-menu li,
+body.responsive-header .main-navigation .nav > ul > li:hover ul.sub-menu li,
+body.responsive-header .main-navigation .nav > ul > li:focus ul.sub-menu li,
+body.responsive-header .main-navigation .nav > ul > li:active ul.sub-menu li{
 	-webkit-animation: none;
 	-moz-animation:    none;
 	-o-animation:      none;
@@ -1593,6 +1614,9 @@ body.responsive-header .main-navigation ul ul.sub-menu li a{
 body.responsive-header .main-navigation .nav > li:hover > a,
 body.responsive-header .main-navigation .nav > li:focus > a,
 body.responsive-header .main-navigation .nav > li:active > a,
+body.responsive-header .main-navigation .nav > ul > li:hover > a,
+body.responsive-header .main-navigation .nav > ul > li:focus > a,
+body.responsive-header .main-navigation .nav > ul > li:active > a,
 body.responsive-header .main-navigation ul ul.sub-menu li:hover a,
 body.responsive-header .main-navigation ul ul.sub-menu li:focus a,
 body.responsive-header .main-navigation ul ul.sub-menu li:active a,
@@ -1609,7 +1633,10 @@ body.responsive-header .main-navigation .nav .sub-menu li.current_menu_ancestor>
 
 body.responsive-header .main-navigation .nav > li:hover:last-child ul.sub-menu,
 body.responsive-header .main-navigation .nav > li:focus:last-child ul.sub-menu,
-body.responsive-header .main-navigation .nav > li:active:last-child ul.sub-menu{
+body.responsive-header .main-navigation .nav > li:active:last-child ul.sub-menu,
+body.responsive-header .main-navigation .nav > ul > li:hover:last-child ul.sub-menu,
+body.responsive-header .main-navigation .nav > ul > li:focus:last-child ul.sub-menu,
+body.responsive-header .main-navigation .nav > ul > li:active:last-child ul.sub-menu{
 	right: auto;
 	text-align: inherit;
 }
@@ -1663,7 +1690,11 @@ body.page-scrollover #masthead .site-header-container .site-branding-container .
 #masthead:hover .main-navigation .nav > li a,
 body.no-divi-header .main-navigation .nav > li a,
 body.responsive-header .main-navigation .nav > li a,
-body.page-scrollover .main-navigation .nav > li a{
+body.page-scrollover .main-navigation .nav > li a,
+#masthead:hover .main-navigation .nav > ul > li a,
+body.no-divi-header .main-navigation .nav > ul > li a,
+body.responsive-header .main-navigation .nav > ul > li a,
+body.page-scrollover .main-navigation .nav > ul > li a{
 	color: #000;
 }
 #masthead:hover .main-navigation .nav li:hover > a,
@@ -1700,7 +1731,10 @@ body.page-scrollover .main-navigation .nav li.current_menu_ancestor>a{
 }
 body.no-divi-header .main-navigation .nav > li > a,
 body.responsive-header .main-navigation .nav > li > a,
-body.page-scrollover .main-navigation .nav > li > a{
+body.page-scrollover .main-navigation .nav > li > a,
+body.no-divi-header .main-navigation .nav > ul > li > a,
+body.responsive-header .main-navigation .nav > ul > li > a,
+body.page-scrollover .main-navigation .nav > ul > li > a{
 	margin: 0 12px 9px 12px;
 }
 
