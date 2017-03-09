@@ -1,0 +1,29 @@
+/**
+ Layout Name: Diviblank
+ Author: Studio Montana (Sebastien Chandonay / Cyril Tissot)
+ Author URI: http://www.studio-montana.com
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+ This theme, like WordPress, is licensed under the GPL.
+ Use it to make something cool, have fun, and share what you've learned with others.
+ */
+@import url('style.css');
+
+body.mce-content-body,body.mce-content-body.wp-autoresize {
+	padding: 12px !important;
+	background: #fff;
+	border: none;
+}
+
+/**
+ * Embed
+ */
+.embed-container {
+	padding-bottom: 20%;
+}
+
+.wpview-wrap[data-wpview-type='embedURL'] .embed-container,.wpview-wrap[data-wpview-type='embed'] .embed-container
+	{
+	margin-bottom: 0;
+}
