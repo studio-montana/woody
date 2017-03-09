@@ -23,7 +23,8 @@
 		/**
 		 * no divi header manager
 		 */
-		if (!$(".entry-content .et_pb_section:first-child div:first-child").hasClass("et_pb_fullwidth_header")){
+		if (!$(".entry-content .et_pb_section:first-child > section:first-child").hasClass("et_pb_fullwidth_header")
+			|| !$(".entry-content .et_pb_section:first-child > section:first-child").hasClass("et_pb_fullscreen")){
 			$("body").addClass("no-divi-header");
 		}
 

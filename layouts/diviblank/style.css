@@ -940,7 +940,8 @@ body, button, input, select, textarea, p, h1, h2, h3, h4, h5, h6{
 	text-align: left;
 }
 
-body.no-divi .site-main{
+body.no-divi .site-main,
+body.no-divi-header .site-main{
 	margin-top: 60px;
 }
 
