@@ -1506,7 +1506,8 @@ body.responsive-header .main-navigation .nav{
 	background: #fff;
 	width: 320px;
 	position: fixed;
-	top: 61px;
+	top: 60px;
+	border-top: 1px solid #dfdfdf;
 	right: -320px;
 	bottom: 0;
 	z-index: 999;
