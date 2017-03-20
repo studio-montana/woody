@@ -73,9 +73,8 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 							<?php 
 							if (!empty($custom_logo)) {
 								echo $custom_logo;
-							} else{ ?>
-								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-							<?php } ?>
+							}?>
+							<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 							<?php
 							$description = get_bloginfo('description', 'display');
 							if ($description || is_customize_preview()){ ?>

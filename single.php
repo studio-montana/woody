@@ -33,7 +33,11 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 				<?php 
 				while ( have_posts() ) : the_post();
 	
-					get_template_part('content', get_post_type());
+					if (function_exists("et_pb_is_pagebuilder_used") && et_pb_is_pagebuilder_used( get_the_ID() )) {
+						get_template_part('content-divi', get_post_type());
+					}else{
+						get_template_part('content', get_post_type());
+					}
 					 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) {

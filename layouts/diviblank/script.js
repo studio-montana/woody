@@ -14,13 +14,6 @@
 	$(document).ready(function() {
 		
 		/**
-		 * no divi manager
-		 */
-		if ($("#et_builder_outer_content").length < 1){
-			$("body").addClass("no-divi");
-		}
-		
-		/**
 		 * no divi header manager
 		 */
 		if (!$(".entry-content .et_pb_section:first-child > section:first-child").hasClass("et_pb_fullwidth_header")

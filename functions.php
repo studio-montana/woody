@@ -311,7 +311,7 @@ if (! function_exists ( "woody_get_protocol" )) :
 	 * get the current Protocol (http || https)
 	 */
 	function woody_get_protocol() {
-		if (isset ( $_SERVER ['HTTPS'] ) && ($_SERVER ['HTTPS'] == 'on' || $_SERVER ['HTTPS'] == 1) || isset ( $_SERVER ['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER ['HTTP_X_FORWARDED_PROTO'] == 'https') {
+		if (is_ssl()) {
 			$protocol = 'https://';
 		} else {
 			$protocol = 'http://';
@@ -470,6 +470,25 @@ if (! function_exists ( "woody_get_layout" )) :
 
 
 endif;
+
+function woody_add_body_class($classes){
+	$classes[] = "woody";
+	
+	/** layout */
+	$woody_layout = woody_get_layout();
+	if (!empty($woody_layout)){
+		$classes[] = "woody-".$woody_layout;
+	}
+	
+	/** divi bulider */
+	if (function_exists("et_pb_is_pagebuilder_used") && et_pb_is_pagebuilder_used( get_the_ID() )) {
+		$classes[] = "use-divi";
+	}else{
+		$classes[] = "dont-use-divi";
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'woody_add_body_class');
 
 /**
  * Display Content Title
