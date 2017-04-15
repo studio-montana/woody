@@ -73,11 +73,6 @@
 	var tool_menu_home_multisite_url = Woody.home_multisite_url;
 	var tool_menu_blog_url = Woody.blog_url;
 	var tool_menu_is_post = Woody.is_post;
-	console.log("tool_menu_current_url : "+tool_menu_current_url);
-	console.log("tool_menu_home_url : "+tool_menu_home_url);
-	console.log("tool_menu_home_multisite_url : "+tool_menu_home_multisite_url);
-	console.log("tool_menu_blog_url : "+tool_menu_blog_url);
-	console.log("tool_menu_is_post : "+tool_menu_is_post);
 	$(".nav a").each(
 			function(i) {
 				if ($(this).attr("href") != undefined) {
