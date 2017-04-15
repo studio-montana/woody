@@ -52,10 +52,10 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry_Item extends ET_Builder_M
 
 	function get_fields() {
 
-		$post_types_items = array('none' => esc_html__("Choose type of post", 'woodcars'), 'page' => esc_html__("page", 'woodcars'), 'post' => esc_html__("post", 'woodcars'));
+		$post_types_items = array('none' => esc_html__("Choose type of post", 'woody'), 'page' => esc_html__("page", 'woody'), 'post' => esc_html__("post", 'woody'));
 		
 		$pages = get_posts(array("post_type" => "page", "numberposts" => -1, "suppress_filters" => false));
-		$pages_items = array('none' => esc_html__("Choose page", 'woodcars'));
+		$pages_items = array('none' => esc_html__("Choose page", 'woody'));
 		if (!empty($pages)){
 			foreach ($pages as $page){
 				$pages_items[$page->ID] = esc_html__(get_the_title($page));
@@ -63,7 +63,7 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry_Item extends ET_Builder_M
 		}
 		
 		$posts = get_posts(array("post_type" => "post", "numberposts" => -1, "suppress_filters" => false));
-		$posts_items = array('none' => esc_html__("Choose post", 'woodcars'));
+		$posts_items = array('none' => esc_html__("Choose post", 'woody'));
 		if (!empty($posts)){
 			foreach ($posts as $post){
 				$posts_items[$post->ID] = esc_html__(get_the_title($post));
@@ -73,7 +73,7 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry_Item extends ET_Builder_M
 		$fields = array(
 				// General
 				'module_post_type' => array(
-						'label'					=> esc_html__('Post type', 'woodcars'),
+						'label'					=> esc_html__('Post type', 'woody'),
 						'type'					=> 'select',
 						'option_category'		=> 'basic_option',
 						'options'         		=> $post_types_items,
@@ -84,7 +84,7 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry_Item extends ET_Builder_M
 						),
 				),
 				'module_page' => array(
-						'label'             => esc_html__("Page", 'woodcars'),
+						'label'             => esc_html__("Page", 'woody'),
 						'type'              => 'select',
 						'option_category'   => 'basic_option',
 						'options'           => $pages_items,
@@ -92,7 +92,7 @@ class Woody_Woodcars_ET_Builder_Module_Fullwidth_Entry_Item extends ET_Builder_M
 						'depends_show_if' 	=> 'page',
 				),
 				'module_post' => array(
-						'label'             => esc_html__("Post", 'woodcars'),
+						'label'             => esc_html__("Post", 'woody'),
 						'type'              => 'select',
 						'option_category'   => 'basic_option',
 						'options'           => $posts_items,

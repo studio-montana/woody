@@ -29,6 +29,7 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 		<div id="sidebar" class="sidebar-container" role="complementary">
 			<div class="widget-area">
 				<?php dynamic_sidebar('sidebar'); ?>
+				<div class="clear"></div>
 			</div><!-- .widget-area -->
 			<div class="clear"></div>
 		</div><!-- #sidebar -->

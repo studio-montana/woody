@@ -26,7 +26,7 @@ if (!class_exists('Woodcars')){ // This theme needs Woodcars
 	function woody_woodcars_woody_dependencies(){
 		$class = 'notice notice-warning is-dismissible';
 		$message = __('Notice : your theme layout needs <strong>Woodcars</strong> plugin.', 'woody');
-		$message_2 = __('Please look at Woodcars plugin website.', 'woodcars');
+		$message_2 = __('Please look at Woodcars plugin website.', 'woody');
 		$message_url = "http://www.seb-c.com/produits/woodcars";
 		printf( '<div class="%1$s"><p>%2$s&nbsp;<a href="%3$s" target="_blank">%4$s</a></p></div>', $class, $message, $message_url, $message_2);
 	}

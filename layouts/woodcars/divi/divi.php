@@ -42,7 +42,7 @@ add_action ( "woodkit_divi_add_module_after", "woody_woodcars_divi_add_module_af
 function woody_woodcars_divi_admin_enqueue_scripts_after() {
 	
 	/** js file can be overrided in child theme */
-	wp_enqueue_script ( "leadformance-divi-module-builder-script", get_stylesheet_directory_uri () . "/layouts/".WOODCARS_LAYOUT_SLUG."/divi/js/builder.js", array (
+	wp_enqueue_script ( "woody-woodcars-divi-module-builder-script", get_stylesheet_directory_uri () . "/layouts/".WOODCARS_LAYOUT_SLUG."/divi/js/builder.js", array (
 			'jquery' 
 	), '1.0' );
 	

@@ -38,7 +38,7 @@ function woody_woodcars_customize_register($wp_customize_manager) {
 	
 	// pages
 	$pages = get_posts(array("post_type" => "page", "suppress_filter" => true, "numberposts" => -1));
-	$pages_choices = array(0 => __("No selection", 'leadformance'));
+	$pages_choices = array(0 => __("No selection", 'woody'));
 	foreach ($pages as $page){
 		$lang = "";
 		if (function_exists("icl_get_languages")){

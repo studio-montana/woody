@@ -22,7 +22,7 @@
  */
 
 /**
- * clear leadformance prop in local storage (otherwise, dynamic fields in module are cached - post-listing dropdown for example)
+ * clear prop in local storage (otherwise, dynamic fields in module are cached - post-listing dropdown for example)
  */
 for ( var prop in localStorage) {
 	if (prop == 'et_pb_templates_woody_woodcars_et_pb_fullwidth_entry_item') {
