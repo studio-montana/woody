@@ -94,6 +94,7 @@ if (!empty($woody_layout) && file_exists(get_template_directory().'/layouts/'.$w
 							<div style="clear: both;"></div>
 						</div>
 					</div><!-- #site-navigation -->
+					<?php do_action("woody_after_main_navigation"); ?>
 				</div>
 				<div style="clear: both;"></div>
 			</header><!-- .site-header -->
