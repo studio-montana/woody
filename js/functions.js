@@ -60,8 +60,10 @@
 	$('.menu-toggle').on('click', function(e) {
 		if ($("body").hasClass("menu-toggled")) {
 			$("body").removeClass("menu-toggled");
+			$("body").trigger("woody-on-menu-toggled", [ "close" ]);
 		} else {
 			$("body").addClass("menu-toggled");
+			$("body").trigger("woody-on-menu-toggled", [ "open" ]);
 		}
 	});
 

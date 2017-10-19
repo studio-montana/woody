@@ -733,10 +733,6 @@ th {
 /* thanks to HTML5boilerplate,
 * github.com/nathansmith/formalize and www.sitepen.com
 */
-/* buttons */
-.btn {
-  display: inline-block;
-}
 /* forms items */
 form,
 fieldset {
@@ -745,8 +741,7 @@ fieldset {
 input,
 button,
 select,
-label,
-.btn {
+label {
   vertical-align: middle;
   font-family: inherit;
   font-size: inherit;
