@@ -28,6 +28,7 @@ define ( 'WOODY_THEME_NAME', 'woody' );
 define ( 'WOODY_THEME_FILE', __FILE__ );
 define ( 'WOODY_THEME_PATH', get_template_directory () );
 define ( 'WOODY_THEME_URI', get_template_directory_uri () );
+define ( 'WOODY_THEME_WEB_CACHE_VERSION', '1.2.0' );
 
 define ( 'WOODY_CSS_FOLDER', 'css/' );
 define ( 'WOODY_JS_FOLDER', 'js/' );
@@ -159,7 +160,7 @@ function woody_scripts_styles() {
 	// Loads Functions JavaScript file
 	wp_enqueue_script ( 'script-woody-functions', get_template_directory_uri () . '/js/functions.js', array (
 			'jquery' 
-	), '1.0', true );
+	), WOODY_THEME_WEB_CACHE_VERSION, true );
 	if (is_multisite ()) {
 		$home_url = get_site_url ( BLOG_ID_CURRENT_SITE );
 		$home_multisite_url = get_site_url ( get_current_blog_id () );
@@ -191,12 +192,12 @@ function woody_scripts_styles() {
 	if (! empty ( $woody_layout )) {
 		wp_enqueue_script ( 'woody-layout-script', get_template_directory_uri () . '/layouts/' . $woody_layout . '/script.js', array (
 				'script-woody-functions' 
-		), '1.0', true );
+		), WOODY_THEME_WEB_CACHE_VERSION, true );
 	}
 	
 	// Knacss style
 	if (file_exists ( get_template_directory () . '/css/knacss.css' )) {
-		wp_enqueue_style ( 'woody-knacss-css', get_template_directory_uri () . '/css/knacss.css', $first_style_dependencies, '1.0' );
+		wp_enqueue_style ( 'woody-knacss-css', get_template_directory_uri () . '/css/knacss.css', $first_style_dependencies, WOODY_THEME_WEB_CACHE_VERSION );
 		$depends_css = array (
 				'woody-knacss-css' 
 		);
@@ -204,7 +205,7 @@ function woody_scripts_styles() {
 	
 	// Layout style
 	if (! empty ( $woody_layout )) {
-		wp_enqueue_style ( 'woody-layout-css', get_template_directory_uri () . '/layouts/' . $woody_layout . '/style.css', $depends_css, '1.0' );
+		wp_enqueue_style ( 'woody-layout-css', get_template_directory_uri () . '/layouts/' . $woody_layout . '/style.css', $depends_css, WOODY_THEME_WEB_CACHE_VERSION );
 		$depends_css = array (
 				'woody-layout-css' 
 		);
@@ -212,7 +213,7 @@ function woody_scripts_styles() {
 	
 	// Layout Internet Explorer specific stylesheet
 	if (! empty ( $woody_layout )) {
-		wp_enqueue_style ( 'woody-ie-css', get_template_directory_uri () . '/layouts/' . $woody_layout . '/ie.css', $depends_css, '1.0' );
+		wp_enqueue_style ( 'woody-ie-css', get_template_directory_uri () . '/layouts/' . $woody_layout . '/ie.css', $depends_css, WOODY_THEME_WEB_CACHE_VERSION );
 		wp_style_add_data ( 'woody-ie-css', 'conditional', 'lt IE 9' );
 		$depends_css = array (
 				'woody-ie-css' 
@@ -220,7 +221,7 @@ function woody_scripts_styles() {
 	}
 	
 	// Woody main style
-	$main_style_version = apply_filters ( "woody_main_style_version", "1.0" );
+	$main_style_version = apply_filters ( "woody_main_style_version", WOODY_THEME_WEB_CACHE_VERSION );
 	$depends_css = apply_filters ( "woody_main_style_dependencies", $depends_css );
 	wp_enqueue_style ( 'woody-main-style', get_stylesheet_uri (), $depends_css, $main_style_version );
 	
