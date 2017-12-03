@@ -37,24 +37,6 @@
 	});
 
 	/**
-	 * Scroll to anchor (if necessary)
-	 */
-	function woody_scroll_to_anchor(hash) {
-		var aTag = $("*[id='" + hash + "']");
-		if (aTag.length > 0){
-			$('html,body').animate({
-				scrollTop : (aTag.offset().top - 120)
-			}, 1000);
-		}
-	}
-	var url = window.location.href;
-	var idx = url.indexOf("#")
-	var hash = idx != -1 ? url.substring(idx + 1) : "";
-	if (typeof (hash) != undefined && hash != null && hash != '') {
-		woody_scroll_to_anchor(hash);
-	}
-
-	/**
 	 * Menu toggle
 	 */
 	$('.menu-toggle').on('click', function(e) {

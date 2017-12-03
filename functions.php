@@ -28,7 +28,7 @@ define ( 'WOODY_THEME_NAME', 'woody' );
 define ( 'WOODY_THEME_FILE', __FILE__ );
 define ( 'WOODY_THEME_PATH', get_template_directory () );
 define ( 'WOODY_THEME_URI', get_template_directory_uri () );
-define ( 'WOODY_THEME_WEB_CACHE_VERSION', '1.2.0' );
+define ( 'WOODY_THEME_WEB_CACHE_VERSION', '1.2.1' );
 
 define ( 'WOODY_CSS_FOLDER', 'css/' );
 define ( 'WOODY_JS_FOLDER', 'js/' );
